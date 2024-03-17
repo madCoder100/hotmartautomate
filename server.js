@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const server = express();
+const port = process.env.PORT || 3000;
 // server.set('views', path.join(__dirname, 'public','views'));
 // server.set('views', 'ejs');
 // server.use(express.json());
@@ -23,9 +24,10 @@ const server = express();
 //  });
 
  server.get('/', (req, res) =>{
-    res.render('index');
+    // res.render('index');
+    res.send("this is definitely working");
  });
 
- server.listen(console.log("listenning"),{
-    port:80,
+ server.listen(port,()=>{
+    console.log(`server is running on port${port}`);
  });
