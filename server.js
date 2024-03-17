@@ -1,7 +1,7 @@
-const exress = require('exress');
+const express = require('express');
 const path = require('path');
 
-const server = exress();
+const server = express();
 server.set('views', path.join(__dirname, 'public','views'));
 server.set('views', 'ejs');
 server.use(express.json());
@@ -26,6 +26,6 @@ server.post('/w', (req, res)=> {
     res.render('index');
  });
 
- server.listen({
-    port:80,
+ server.listen(console.log("listenning"),{
+    port:3000,
  });
