@@ -24,7 +24,7 @@ server.post('/webhook', (req, res)=> {
  });
 
  server.get('/', (req, res) =>{
-    res.render('index');
+   //  res.render('index');
     res.send('this is definittely working');
  });
 
