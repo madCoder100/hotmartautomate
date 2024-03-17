@@ -9,7 +9,7 @@ server.use(express.json());
 server.use(express.static(path.join(__dirname, 'public')));
 
 
-server.post('/webhook', (req, res)=> {
+server.post('/', (req, res)=> {
  const hmToken = 'sBwu0kd8uGJSdE1JNqQNqyM9ayB094a6433e19-e849-4052-a7d8-c4b0c6219f06';
  const hmReceivedToken = req.headers['x-hotmart-hottok'];
 
