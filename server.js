@@ -4,7 +4,7 @@ const path = require('path');
 const server = express();
 const port = process.env.PORT || 3000;
 server.set('views', path.join(__dirname, 'public','views'));
-server.set('views', 'ejs');
+server.set('view engine', 'ejs');
 server.use(express.json());
 server.use(express.static(path.join(__dirname, 'public')));
 
