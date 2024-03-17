@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 
 const server = express();
-// server.set('views', path.join(__dirname, 'public','views'));
-// server.set('views', 'ejs');
+const port = process.env.PORT || 3000;
+server.set('views', path.join(__dirname, 'public','views'));
+server.set('views', 'ejs');
 // server.use(express.json());
 // server.use(express.static(path.join(__dirname, 'public')));
 
@@ -23,10 +24,10 @@ const server = express();
 //  });
 
  server.get('/', (req, res) =>{
-    res.render('index');
+    // res.render('index');
     res.send('this is definittely working');
  });
 
- server.listen(console.log("listenning"),{
-    port:80,
+ server.listen(port, ()=>{
+    console.log(`server is listening on port ${port}`);
  });
