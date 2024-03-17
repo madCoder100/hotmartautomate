@@ -27,5 +27,5 @@ server.post('/w', (req, res)=> {
  });
 
  server.listen(console.log("listenning"),{
-    port:3000,
+    port:80,
  });
