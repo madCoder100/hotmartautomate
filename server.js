@@ -10,6 +10,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 
 
 server.post('/', (req, res)=> {
+try{
  const hmToken = 'sBwu0kd8uGJSdE1JNqQNqyM9ayB094a6433e19-e849-4052-a7d8-c4b0c6219f06';
  const hmReceivedToken = req.headers['x-hotmart-hottok'];
 
@@ -21,6 +22,9 @@ server.post('/', (req, res)=> {
     res.status(401).send('authorization token invalid');
  
  }
+}catch(error){
+   console.error(error);
+}
  });
 
  server.get('/', (req, res) =>{
