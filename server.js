@@ -15,7 +15,7 @@ try{
 
  if(hmReceivedToken == hmToken){
     const data = req.body;
-    console.log('data recieved !!', data);
+    console.log('data recieved !!', data.data.buyer.email);
     res.status(200).send('webhook received');
  }else{
     res.status(401).send('authorization token invalid');
