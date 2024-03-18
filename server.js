@@ -30,7 +30,7 @@ try{
 
  server.get('/', (req, res) =>{
    //  res.render('index');
-   res.status(200).send(email);
+   res.send(`recieved data : ${email}`)
    //  console.log("data "+data);
  });
 
