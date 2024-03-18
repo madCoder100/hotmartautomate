@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-
+let data;
 const server = express();
 const port = process.env.PORT || 3000;
 server.set('views', path.join(__dirname, 'public','views'));
@@ -15,7 +15,7 @@ try{
  const hmReceivedToken = req.headers['x-hotmart-hottok'];
 
  if(hmReceivedToken == hmToken){
-    const data = req.body;
+     data = req.body;
     console.log('data recieved !!', data);
     res.status(200).send('webhook received');
  }else{
@@ -29,7 +29,7 @@ try{
 
  server.get('/', (req, res) =>{
    //  res.render('index');
-    res.send('this is definittely working');
+    res.send('......'+data);
  });
 
  server.listen(port, ()=>{
