@@ -30,7 +30,7 @@ try{
 
  server.get('/', (req, res) =>{
    //  res.render('index');
-    res.send("the server is working",email);
+   res.status(status).send(body);
    //  console.log("data "+data);
  });
 
