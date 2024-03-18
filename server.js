@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-let email;
 const server = express();
 const port = process.env.PORT || 3000;
 server.set('views', path.join(__dirname, 'public','views'));
@@ -16,8 +15,7 @@ try{
 
  if(hmReceivedToken == hmToken){
     const data = req.body;
-    email = req.body;
-    console.log('data recieved !!', data);
+    console.log('data recieved !!', data.data.buyer.email);
     res.status(200).send('webhook received');
  }else{
     res.status(401).send('authorization token invalid');
@@ -30,7 +28,7 @@ try{
 
  server.get('/', (req, res) =>{
    //  res.render('index');
-   res.send("data recieved" + email.buyer.email);
+   res.send("data recieved");
    //  console.log("data "+data);
  });
 
