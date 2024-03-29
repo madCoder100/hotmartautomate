@@ -29,7 +29,7 @@ try{
  server.get('/', (req, res) =>{
    //  res.render('index');
    res.send("data recieved");
-    console.log("data "+data);
+    // console.log("data "+data);
  });
 
  server.listen(port, ()=>{
